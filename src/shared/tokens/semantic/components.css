@@ -1,0 +1,13 @@
+:root {
+	--button-height-sm: 28px;
+	--button-height-md: 36px;
+	--button-height-lg: 48px;
+
+	--icon-button-sm: 28px;
+	--icon-button-md: 32px;
+	--icon-button-lg: 40px;
+
+	--focus-ring-width: 2px;
+	--focus-ring-offset: 2px;
+	--focus-ring-color: var(--accent-ring);
+}

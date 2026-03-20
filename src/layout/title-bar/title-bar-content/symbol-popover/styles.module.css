@@ -1,0 +1,40 @@
+.grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2px;
+}
+
+.symbolButton {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+	appearance: none;
+	border: none;
+	background: transparent;
+	color: var(--text-primary);
+	font-size: var(--font-size-sm);
+	border-radius: var(--radius-sm);
+	padding: var(--spacing-sm) var(--spacing-md);
+	cursor: pointer;
+	transition: all 100ms ease;
+	white-space: nowrap;
+	text-align: left;
+}
+
+.symbolButton:hover {
+	background: var(--bg-hover);
+}
+
+.symbolButton:active {
+	transform: scale(0.97);
+}
+
+.symbolLabel {
+	font-weight: var(--font-weight-medium);
+	min-width: 2.5em;
+}
+
+.symbolDesc {
+	font-size: var(--font-size-xs);
+	color: var(--text-tertiary);
+}

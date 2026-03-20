@@ -1,0 +1,111 @@
+.panel {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+.tabs {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.tabList {
+	display: flex;
+	gap: var(--spacing-xs);
+	height: 38px;
+	padding: 0 var(--spacing-md);
+	border-bottom: 1px solid var(--border-primary);
+	position: relative;
+	align-items: center;
+}
+
+.tabTrigger {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+	border: none;
+	background: transparent;
+	color: var(--text-tertiary);
+	cursor: pointer;
+	border-radius: var(--radius-sm);
+	transition: all 0.15s ease;
+}
+
+.tabTrigger:hover {
+	color: var(--text-secondary);
+	background: var(--bg-hover);
+}
+
+.tabTrigger[data-selected] {
+	color: var(--text-primary);
+}
+
+.tabTrigger[data-selected] svg {
+	stroke-width: 1.5;
+}
+
+.tabListSpacer {
+	flex: 1;
+}
+
+.tabContent {
+	flex: 1;
+	min-height: 0;
+	overflow: hidden;
+}
+
+.tabContent[data-state="inactive"] {
+	display: none;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.emptyState {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+	padding: var(--spacing-xl);
+	color: var(--text-secondary);
+	font-size: var(--font-size-sm);
+}
+
+.section {
+	padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.divider {
+	height: 1px;
+	background: var(--border-primary);
+}
+
+.addButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+	padding: 0;
+	border: none;
+	background: transparent;
+	color: var(--text-tertiary);
+	cursor: pointer;
+	border-radius: var(--radius-sm);
+	transition: all 0.15s ease;
+}
+
+.addButton:hover {
+	color: var(--text-primary);
+	background: var(--bg-hover);
+}

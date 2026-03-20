@@ -1,0 +1,272 @@
+.panel {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	padding-top: var(--spacing-2xs);
+	padding-bottom: var(--spacing-2xs);
+	transition: background 150ms ease;
+}
+
+.panel.dragging {
+	background: color-mix(in srgb, var(--accent-primary) 10%, transparent);
+}
+
+.toolbar {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-xs);
+	min-height: var(--spacing-xl);
+	padding: 0 var(--spacing-md);
+	color: var(--text-secondary);
+}
+
+:global(:root[data-theme="dark"]) .toolbar {
+	color: var(--text-primary);
+}
+
+.toolbarTitle {
+	flex: 1;
+	font-size: var(--font-size-xs);
+	font-weight: var(--font-weight-medium);
+	line-height: var(--spacing-xl);
+}
+
+.loading {
+	font-size: var(--font-size-xs);
+	color: var(--text-tertiary);
+	padding: var(--spacing-md);
+	text-align: center;
+	line-height: 1.5;
+}
+
+.emptyState {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--spacing-sm);
+	padding: var(--spacing-lg) var(--spacing-md);
+	text-align: center;
+}
+
+.emptyIcon {
+	color: var(--text-tertiary);
+	opacity: 0.5;
+}
+
+.emptyText {
+	font-size: var(--font-size-sm);
+	color: var(--text-secondary);
+	margin: 0;
+}
+
+.emptyAction {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--spacing-xs);
+	padding: var(--spacing-xs) var(--spacing-sm);
+	border: 1px dashed var(--border-primary);
+	border-radius: var(--radius-md);
+	background: transparent;
+	color: var(--text-secondary);
+	font-size: var(--font-size-xs);
+	cursor: pointer;
+	transition: all 0.15s ease;
+}
+
+.emptyAction:hover {
+	border-color: var(--accent-primary);
+	color: var(--accent-primary);
+	background: color-mix(in srgb, var(--accent-primary) 5%, transparent);
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: var(--spacing-sm);
+	padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.imageContainer {
+	position: relative;
+	aspect-ratio: 1;
+	border-radius: var(--radius-md);
+	overflow: hidden;
+	background: var(--bg-secondary);
+}
+
+.imageButton {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+.imageButton:focus-visible {
+	outline: 2px solid var(--accent-primary);
+	outline-offset: -2px;
+}
+
+.image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 150ms ease;
+}
+
+.imageButton:hover .image {
+	transform: scale(1.02);
+}
+
+.imagePlaceholder {
+	width: 100%;
+	height: 100%;
+	background: var(--bg-tertiary);
+	animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+}
+
+.imageOverlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: var(--spacing-xs);
+	opacity: 0;
+	transition: opacity 150ms ease;
+}
+
+.imageContainer:hover .imageOverlay {
+	opacity: 1;
+}
+
+.deleteButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+	border: none;
+	border-radius: var(--radius-sm);
+	background: rgba(0, 0, 0, 0.6);
+	color: white;
+	cursor: pointer;
+	transition: background 150ms ease;
+}
+
+.deleteButton:hover {
+	background: var(--color-danger);
+}
+
+.imageInfo {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: var(--spacing-xs);
+	background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+	color: white;
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.imageName {
+	font-size: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.imageSize {
+	font-size: 9px;
+	opacity: 0.7;
+}
+
+.dropOverlay {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: color-mix(in srgb, var(--accent-primary) 20%, transparent);
+	border: 2px dashed var(--accent-primary);
+	border-radius: var(--radius-md);
+	z-index: 10;
+	pointer-events: none;
+}
+
+.dropOverlay span {
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-medium);
+	color: var(--accent-primary);
+}
+
+.imageError {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--bg-tertiary);
+	color: var(--text-tertiary);
+	font-size: var(--font-size-xs);
+}
+
+.lightbox {
+	max-width: 90vw;
+	max-height: 90vh;
+	width: auto;
+	height: auto;
+	padding: 0;
+	background: rgba(0, 0, 0, 0.95);
+	border: none;
+	border-radius: var(--radius-lg);
+	overflow: hidden;
+}
+
+.lightboxClose {
+	position: absolute;
+	top: var(--spacing-md);
+	right: var(--spacing-md);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	border: none;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.1);
+	color: white;
+	cursor: pointer;
+	transition: background 150ms ease;
+	z-index: 1;
+}
+
+.lightboxClose:hover {
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.lightboxImage {
+	max-width: 100%;
+	max-height: calc(90vh - 60px);
+	object-fit: contain;
+}
+
+.lightboxInfo {
+	display: flex;
+	justify-content: space-between;
+	padding: var(--spacing-md);
+	color: rgba(255, 255, 255, 0.8);
+	font-size: var(--font-size-sm);
+}

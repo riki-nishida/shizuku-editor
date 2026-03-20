@@ -1,0 +1,25 @@
+.previewBanner {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+	padding: var(--spacing-sm) var(--spacing-md);
+	background: var(--bg-tertiary);
+	border-bottom: 1px solid var(--border-primary);
+	font-size: var(--font-size-xs);
+	color: var(--text-secondary);
+	writing-mode: horizontal-tb;
+	text-orientation: mixed;
+	flex-shrink: 0;
+}
+
+.previewBadge {
+	display: inline-flex;
+	align-items: center;
+	padding: 1px var(--spacing-xs);
+	background: var(--accent-primary);
+	color: var(--text-on-accent);
+	border-radius: var(--radius-sm);
+	font-size: var(--font-size-2xs, 10px);
+	font-weight: var(--font-weight-semibold);
+	white-space: nowrap;
+}

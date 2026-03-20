@@ -1,0 +1,58 @@
+.container {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-md);
+	height: 100%;
+	padding: 0 var(--spacing-md);
+	min-width: 0;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	pointer-events: auto;
+	flex: 1;
+	justify-content: space-between;
+}
+
+.navigation {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-xs);
+	min-width: 0;
+	overflow: hidden;
+}
+
+.separator {
+	display: flex;
+	align-items: center;
+	color: var(--text-tertiary);
+	flex-shrink: 0;
+	user-select: none;
+	opacity: 0.6;
+}
+
+.actions {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-xs);
+	flex-shrink: 0;
+}
+
+.viewToggle {
+	display: flex;
+	align-items: center;
+	gap: 2px;
+}
+
+.actionGroup {
+	display: flex;
+	align-items: center;
+	gap: 2px;
+}
+
+.actionDivider {
+	width: 1px;
+	height: 14px;
+	background: var(--border-primary);
+	margin: 0 var(--spacing-xs);
+	flex-shrink: 0;
+}

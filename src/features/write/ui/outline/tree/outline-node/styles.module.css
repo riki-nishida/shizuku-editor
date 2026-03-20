@@ -1,0 +1,31 @@
+.iconButton {
+	width: var(--spacing-lg);
+	height: var(--spacing-lg);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	background: transparent;
+	border: none;
+	color: var(--text-secondary);
+	cursor: pointer;
+	border-radius: var(--radius-full, 999px);
+}
+
+.iconButton:hover {
+	background: var(--surface-secondary);
+}
+
+.iconButton svg {
+	width: var(--font-14);
+	height: var(--font-14);
+	transition: transform 0.2s ease;
+}
+
+.collapsed svg {
+	transform: rotate(-90deg);
+}
+
+.dropTarget {
+	background: transparent;
+}

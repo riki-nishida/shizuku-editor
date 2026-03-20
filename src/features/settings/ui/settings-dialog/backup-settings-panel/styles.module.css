@@ -1,0 +1,203 @@
+.container {
+	padding: var(--spacing-lg);
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-lg);
+}
+
+.statusCard {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-md);
+	padding: var(--spacing-md);
+	border-radius: var(--radius-md);
+	background: var(--bg-secondary);
+	border: 1px solid var(--border-primary);
+}
+
+.statusIcon {
+	flex-shrink: 0;
+}
+
+.statusCard[data-status="ok"] {
+	border-left: 3px solid var(--status-success);
+}
+
+.statusCard[data-status="ok"] .statusIcon {
+	color: var(--status-success);
+}
+
+.statusCard[data-status="warning"] {
+	border-left: 3px solid var(--status-warning);
+}
+
+.statusCard[data-status="warning"] .statusIcon {
+	color: var(--status-warning);
+}
+
+.statusContent {
+	flex: 1;
+	min-width: 0;
+}
+
+.statusTitle {
+	font-size: var(--font-size-md);
+	font-weight: var(--font-weight-semibold);
+	color: var(--text-primary);
+}
+
+.statusMeta {
+	font-size: var(--font-size-xs);
+	color: var(--text-secondary);
+	margin-top: var(--spacing-2xs);
+}
+
+.statusSeparator {
+	margin: 0 var(--spacing-xs);
+	color: var(--text-tertiary);
+}
+
+.listSection {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+.listHeader {
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-medium);
+	color: var(--text-secondary);
+}
+
+.backupList {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+	max-height: 280px;
+	overflow-y: auto;
+}
+
+.backupItem {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--spacing-sm) var(--spacing-md);
+	background: var(--bg-secondary);
+	border-radius: var(--radius-sm);
+	border: 1px solid var(--border-primary);
+}
+
+.backupInfo {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+}
+
+.backupBadge {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--spacing-2xs) var(--spacing-xs);
+	font-size: var(--font-size-2xs);
+	font-weight: var(--font-weight-medium);
+	border-radius: var(--radius-xs);
+	white-space: nowrap;
+}
+
+.backupBadge[data-type="auto"] {
+	background: color-mix(in srgb, var(--accent-primary) 15%, transparent);
+	color: var(--accent-primary);
+}
+
+.backupBadge[data-type="manual"] {
+	background: color-mix(in srgb, var(--status-success) 15%, transparent);
+	color: var(--status-success);
+}
+
+.backupBadge[data-type="pre_restore"] {
+	background: color-mix(in srgb, var(--status-warning) 15%, transparent);
+	color: var(--status-warning);
+}
+
+.backupTime {
+	font-size: var(--font-size-sm);
+	color: var(--text-primary);
+}
+
+.backupSize {
+	font-size: var(--font-size-xs);
+	color: var(--text-tertiary);
+}
+
+.backupActions {
+	display: flex;
+	gap: var(--spacing-xs);
+}
+
+.actionButton {
+	padding: var(--spacing-xs) var(--spacing-sm);
+	font-size: var(--font-size-xs);
+	border-radius: var(--radius-sm);
+	cursor: pointer;
+	border: 1px solid var(--border-primary);
+	background: var(--bg-primary);
+	color: var(--text-primary);
+	transition: background 0.15s ease;
+}
+
+.actionButton:hover {
+	background: var(--bg-tertiary);
+}
+
+.actionButton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.deleteButton {
+	padding: var(--spacing-xs) var(--spacing-sm);
+	font-size: var(--font-size-xs);
+	border-radius: var(--radius-sm);
+	cursor: pointer;
+	border: 1px solid var(--border-primary);
+	background: transparent;
+	color: var(--text-tertiary);
+	transition:
+		background 0.15s ease,
+		color 0.15s ease;
+}
+
+.deleteButton:hover {
+	background: var(--status-danger);
+	border-color: var(--status-danger);
+	color: var(--text-on-accent);
+}
+
+.toggleButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: var(--spacing-xs);
+	width: 100%;
+	padding: var(--spacing-sm);
+	font-size: var(--font-size-xs);
+	color: var(--text-secondary);
+	background: transparent;
+	border: 1px dashed var(--border-primary);
+	border-radius: var(--radius-sm);
+	cursor: pointer;
+	transition:
+		background 0.15s ease,
+		color 0.15s ease;
+}
+
+.toggleButton:hover {
+	background: var(--bg-tertiary);
+	color: var(--text-primary);
+}
+
+.emptyState {
+	padding: var(--spacing-lg);
+	text-align: center;
+	color: var(--text-secondary);
+	font-size: var(--font-size-sm);
+}

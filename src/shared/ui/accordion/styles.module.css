@@ -1,0 +1,97 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+}
+
+.item {
+	border-radius: var(--radius-sm);
+	background: var(--bg-secondary);
+	overflow: hidden;
+}
+
+.item[data-state="open"] {
+	background: var(--bg-tertiary);
+}
+
+.itemTrigger {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--spacing-sm);
+	padding: var(--spacing-sm) var(--spacing-md);
+	border: none;
+	background: transparent;
+	color: var(--text-primary);
+	font-size: var(--font-size-sm);
+	text-align: left;
+	cursor: pointer;
+	transition: background-color 150ms ease;
+}
+
+.itemTrigger:hover {
+	background: var(--bg-hover);
+}
+
+.item[data-state="open"] .itemTrigger {
+	background: transparent;
+}
+
+.itemTriggerContent {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+}
+
+.itemIndicator {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--text-tertiary);
+	transition: transform 200ms ease;
+}
+
+.item[data-state="open"] .itemIndicator {
+	transform: rotate(180deg);
+}
+
+.itemContent {
+	overflow: hidden;
+}
+
+.itemContent[data-state="open"] {
+	animation: slideDown 200ms ease-out;
+}
+
+.itemContent[data-state="closed"] {
+	animation: slideUp 200ms ease-out;
+}
+
+@keyframes slideDown {
+	from {
+		height: 0;
+		opacity: 0;
+	}
+	to {
+		height: var(--height);
+		opacity: 1;
+	}
+}
+
+@keyframes slideUp {
+	from {
+		height: var(--height);
+		opacity: 1;
+	}
+	to {
+		height: 0;
+		opacity: 0;
+	}
+}
+
+.itemContentInner {
+	padding: 0 var(--spacing-md) var(--spacing-md);
+}

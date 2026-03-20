@@ -1,0 +1,112 @@
+.container {
+	flex: 1;
+	min-height: 0;
+	overflow-y: auto;
+	padding: var(--spacing-lg);
+	background: var(--bg-tertiary);
+}
+
+.editor {
+	background: var(--surface-elevated);
+	padding: var(--spacing-2xl);
+}
+
+.editor :global(.ProseMirror) {
+	outline: none;
+	font-family:
+		"游明朝 Medium", "Yu Mincho Medium", "游明朝", "Yu Mincho", "YuMincho",
+		"ヒラギノ明朝 ProN", "Hiragino Mincho ProN", serif;
+	font-size: var(--editor-font-size, 16px);
+	line-height: var(--editor-line-height, 2);
+	min-height: 100%;
+}
+
+.editor :global(.ProseMirror p) {
+	margin: 0;
+}
+
+.editor :global(.scene-separator) {
+	user-select: none;
+	pointer-events: none;
+	padding: var(--spacing-xl) 0;
+	margin: var(--spacing-lg) 0;
+}
+
+.editor :global(.scene-separator-line) {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-md);
+}
+
+.editor :global(.scene-separator-line::before),
+.editor :global(.scene-separator-line::after) {
+	content: "";
+	flex: 1;
+	height: 1px;
+	background: var(--border-primary);
+}
+
+.editor :global(.scene-separator-title) {
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-semibold);
+	color: var(--text-secondary);
+	white-space: nowrap;
+}
+
+.verticalContainer {
+	overflow-x: auto;
+	overflow-y: hidden;
+
+	direction: rtl;
+	padding: var(--spacing-lg);
+}
+
+.verticalContainer > * {
+	direction: ltr;
+}
+
+.vertical {
+	display: block;
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+
+	width: auto;
+	min-width: 100%;
+
+	max-height: calc(100% - var(--spacing-lg) * 2);
+	height: fit-content;
+
+	align-self: flex-end;
+}
+
+.vertical :global(.ProseMirror) {
+	height: 100%;
+	width: auto;
+	min-width: 100%;
+
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+}
+
+.vertical :global(.scene-separator) {
+	padding: 0 var(--spacing-xl);
+	margin: 0 var(--spacing-lg);
+}
+
+.vertical :global(.scene-separator-line) {
+	flex-direction: column;
+	height: auto;
+	width: auto;
+}
+
+.vertical :global(.scene-separator-line::before),
+.vertical :global(.scene-separator-line::after) {
+	width: 1px;
+	height: auto;
+	flex: 1;
+}
+
+.vertical :global(.scene-separator-title) {
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+}

@@ -1,0 +1,182 @@
+.container {
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+}
+
+.trigger {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-xs);
+	padding: var(--spacing-xs) var(--spacing-sm);
+	border: none;
+	background: transparent;
+	color: var(--text-primary);
+	font-size: var(--font-size-md);
+	font-weight: var(--font-weight-medium);
+	cursor: pointer;
+	border-radius: var(--radius-sm);
+	transition: background-color 150ms ease;
+}
+
+.trigger:hover {
+	background: var(--bg-hover);
+}
+
+.trigger:focus-visible {
+	outline: none;
+	background: var(--bg-hover);
+}
+
+.triggerIcon {
+	flex-shrink: 0;
+	color: var(--text-secondary);
+}
+
+.triggerText {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 200px;
+}
+
+.popoverContent {
+	display: flex;
+	flex-direction: column;
+	min-width: 200px;
+}
+
+.divider {
+	height: 1px;
+	background: var(--border-primary);
+	margin: var(--spacing-xs) 0;
+}
+
+.workList {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-2xs);
+	max-height: 200px;
+	overflow-y: auto;
+	padding: var(--spacing-xs) 0;
+}
+
+.emptyList {
+	margin: 0;
+	padding: var(--spacing-sm) var(--spacing-md);
+	color: var(--text-tertiary);
+	font-size: var(--font-size-sm);
+}
+
+.workItem {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-2xs);
+	width: 100%;
+	padding: 0 var(--spacing-xs) 0 0;
+	border: none;
+	background: transparent;
+	color: var(--text-primary);
+	font: inherit;
+	font-size: var(--font-size-sm);
+	text-align: left;
+	border-radius: var(--radius-sm);
+	transition: background-color 150ms ease;
+}
+
+.workItem:hover {
+	background: var(--bg-hover);
+}
+
+.workItem[data-active="true"] {
+	background: var(--bg-selected);
+}
+
+.workItemButton {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--spacing-2xs);
+	flex: 1;
+	min-width: 0;
+	padding: var(--spacing-sm) var(--spacing-md);
+	border: none;
+	background: transparent;
+	color: inherit;
+	font: inherit;
+	text-align: left;
+	cursor: pointer;
+}
+
+.workName {
+	width: 100%;
+	font-weight: var(--font-weight-medium);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.workMeta {
+	font-size: var(--font-size-xs);
+	color: var(--text-tertiary);
+}
+
+.menuButton {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+	border: none;
+	background: transparent;
+	color: var(--text-tertiary);
+	cursor: pointer;
+	border-radius: var(--radius-sm);
+	opacity: 0;
+	transition:
+		opacity 150ms ease,
+		background-color 150ms ease,
+		color 150ms ease;
+}
+
+.workItem:hover .menuButton {
+	opacity: 1;
+}
+
+.menuButton:hover {
+	background: var(--bg-hover);
+	color: var(--text-primary);
+}
+
+.inlineInput {
+	padding: var(--spacing-xs);
+}
+
+.addButton {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+	width: 100%;
+	padding: var(--spacing-sm) var(--spacing-md);
+	border: none;
+	background: transparent;
+	color: var(--text-secondary);
+	font: inherit;
+	font-size: var(--font-size-sm);
+	text-align: left;
+	cursor: pointer;
+	border-radius: var(--radius-sm);
+	transition:
+		background-color 150ms ease,
+		color 150ms ease;
+}
+
+.addButton:hover:not(:disabled) {
+	background: var(--bg-hover);
+	color: var(--text-primary);
+}
+
+.addButton:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}

@@ -1,0 +1,192 @@
+.panel {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-md);
+}
+
+.metaRow {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+.metaItem {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-2xs);
+}
+
+.metaLabel {
+	font-size: var(--font-size-xs);
+	font-weight: var(--font-weight-medium);
+	color: var(--text-secondary);
+}
+
+.section {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+}
+
+.sectionLabel {
+	font-size: var(--font-size-xs);
+	font-weight: var(--font-weight-medium);
+	letter-spacing: 0.05em;
+	color: var(--text-secondary);
+}
+
+.metaValue {
+	font-size: var(--font-size-sm);
+	color: var(--text-primary);
+}
+
+.textarea {
+	width: 100%;
+	padding: var(--spacing-sm);
+	border: 1px solid var(--border-primary);
+	border-radius: var(--radius-md);
+	background: var(--bg-primary);
+	color: var(--text-primary);
+	font-size: var(--font-size-sm);
+	font-family: inherit;
+	line-height: 1.5;
+	resize: vertical;
+	min-height: 60px;
+	transition:
+		border-color var(--transition-normal),
+		box-shadow var(--transition-normal);
+}
+
+.textarea:focus {
+	outline: var(--focus-ring-width) solid var(--focus-ring-color);
+	outline-offset: var(--focus-ring-offset);
+	border-color: var(--border-focus);
+}
+
+.select {
+	width: 100%;
+	padding: var(--spacing-xs) var(--spacing-sm);
+	border: 1px solid var(--border-primary);
+	border-radius: var(--radius-md);
+	background: var(--bg-primary);
+	color: var(--text-primary);
+	font-size: var(--font-size-sm);
+	cursor: pointer;
+	transition:
+		border-color var(--transition-normal),
+		box-shadow var(--transition-normal);
+}
+
+.select:focus {
+	outline: var(--focus-ring-width) solid var(--focus-ring-color);
+	outline-offset: var(--focus-ring-offset);
+	border-color: var(--border-focus);
+}
+
+.input {
+	width: 100%;
+	padding: var(--spacing-xs) var(--spacing-sm);
+	border: 1px solid var(--border-primary);
+	border-radius: var(--radius-md);
+	background: var(--bg-primary);
+	color: var(--text-primary);
+	font-size: var(--font-size-sm);
+	font-family: inherit;
+	transition:
+		border-color var(--transition-normal),
+		box-shadow var(--transition-normal);
+}
+
+.input:focus {
+	outline: var(--focus-ring-width) solid var(--focus-ring-color);
+	outline-offset: var(--focus-ring-offset);
+	border-color: var(--border-focus);
+}
+
+.helpText {
+	font-size: var(--font-size-xs);
+	color: var(--text-secondary);
+	margin: 0;
+	margin-top: calc(var(--spacing-xs) / 2);
+}
+
+.tagList {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--spacing-xs);
+	align-items: center;
+}
+
+.tag {
+	display: inline-flex;
+	align-items: center;
+	padding: calc(var(--spacing-xs) / 2) var(--spacing-sm);
+	background: var(--bg-tertiary);
+	color: var(--text-primary);
+	font-size: var(--font-size-xs);
+	border-radius: var(--radius-sm);
+	border: 1px solid var(--border-primary);
+}
+
+.addTagButton {
+	display: inline-flex;
+	align-items: center;
+	gap: calc(var(--spacing-xs) / 2);
+	padding: calc(var(--spacing-xs) / 2) var(--spacing-sm);
+	border: 1px dashed var(--border-primary);
+	border-radius: var(--radius-sm);
+	background: transparent;
+	color: var(--text-secondary);
+	font-size: var(--font-size-xs);
+	cursor: pointer;
+	transition: all var(--transition-fast);
+}
+
+.addTagButton:hover {
+	border-color: var(--accent-primary);
+	color: var(--accent-primary);
+	background: var(--bg-tertiary);
+}
+
+.radioGroup,
+.checkboxGroup {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+}
+
+.radioLabel,
+.checkboxLabel {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-xs);
+	font-size: var(--font-size-sm);
+	color: var(--text-primary);
+	cursor: pointer;
+}
+
+.radioLabel input,
+.checkboxLabel input {
+	cursor: pointer;
+}
+
+.addButton {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--spacing-xs);
+	padding: var(--spacing-xs) var(--spacing-md);
+	border: 1px dashed var(--border-primary);
+	border-radius: var(--radius-md);
+	background: transparent;
+	color: var(--text-secondary);
+	font-size: var(--font-size-sm);
+	cursor: pointer;
+	transition: all var(--transition-fast);
+	align-self: flex-start;
+}
+
+.addButton:hover {
+	border-color: var(--accent-primary);
+	color: var(--accent-primary);
+	background: var(--bg-tertiary);
+}

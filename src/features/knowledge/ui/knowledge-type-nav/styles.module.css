@@ -1,0 +1,108 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	min-width: 0;
+	background: var(--bg-tertiary);
+	height: 100%;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--spacing-xs) var(--spacing-md);
+	min-height: 32px;
+}
+
+.headerTitle {
+	font-size: var(--font-size-xs);
+	font-weight: var(--font-weight-medium);
+	color: var(--text-tertiary);
+	letter-spacing: 0.05em;
+	margin: 0;
+}
+
+.typeList {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	padding: var(--spacing-xs) var(--spacing-md);
+	overflow-x: hidden;
+	overflow-y: auto;
+	flex: 1;
+}
+
+.count {
+	flex-shrink: 0;
+	font-size: var(--font-size-xs);
+	color: var(--text-tertiary);
+	min-width: 24px;
+	text-align: right;
+	line-height: var(--spacing-xl);
+	font-variant-numeric: tabular-nums;
+}
+
+.inlineInput {
+	padding: 0 var(--spacing-md);
+}
+
+.inlineInput :global(input) {
+	min-height: 0;
+	line-height: var(--spacing-xl);
+	padding: 0 var(--spacing-xs);
+}
+
+.appearancePicker.appearancePicker {
+	width: 160px;
+	padding: var(--spacing-xs);
+}
+
+.pickerGrid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 2px;
+}
+
+.pickerItem {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 1;
+	padding: 0;
+	border: none;
+	background: transparent;
+	border-radius: var(--radius-sm);
+	cursor: pointer;
+	color: var(--text-secondary);
+	transition:
+		background var(--transition-fast),
+		color var(--transition-fast);
+}
+
+.pickerItem:hover,
+.pickerItem[data-highlighted] {
+	background: var(--bg-hover);
+	color: var(--text-primary);
+}
+
+.pickerItemActive {
+	background: var(--bg-selected);
+	color: var(--text-primary);
+}
+
+.pickerItemActive:hover,
+.pickerItemActive[data-highlighted] {
+	background: var(--bg-selected);
+}
+
+.colorSwatch {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	border: 1px solid var(--border-subtle);
+}
+
+:global(:root[data-theme="dark"]) .colorSwatch {
+	filter: saturate(0.6) brightness(0.85);
+}

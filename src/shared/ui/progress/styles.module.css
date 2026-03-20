@@ -1,0 +1,18 @@
+.root {
+	width: 100%;
+}
+
+.track {
+	width: 100%;
+	height: var(--spacing-sm);
+	background: var(--accent-subtle);
+	border-radius: var(--radius-full);
+	overflow: hidden;
+}
+
+.range {
+	height: 100%;
+	background: var(--accent-primary);
+	border-radius: var(--radius-full);
+	transition: width 200ms ease;
+}

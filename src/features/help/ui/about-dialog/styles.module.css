@@ -1,0 +1,58 @@
+.content {
+	width: 100%;
+	max-width: 320px;
+	height: auto;
+	max-height: none;
+	background: var(--bg-primary);
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow-lg);
+}
+
+.body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: var(--spacing-2xl) var(--spacing-xl);
+	gap: var(--spacing-sm);
+}
+
+.icon {
+	margin-bottom: var(--spacing-sm);
+}
+
+.icon img {
+	border-radius: var(--radius-lg);
+}
+
+.appName {
+	font-size: var(--font-size-xl);
+	font-weight: 600;
+	color: var(--text-primary);
+	margin: 0;
+}
+
+.version {
+	font-size: var(--font-size-sm);
+	color: var(--text-secondary);
+	margin: 0;
+}
+
+.copyright {
+	font-size: var(--font-size-xs);
+	color: var(--text-tertiary);
+	margin: var(--spacing-md) 0 0;
+}
+
+.websiteLink {
+	font-size: var(--font-size-xs);
+	color: var(--text-link);
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.websiteLink:hover {
+	text-decoration: underline;
+}

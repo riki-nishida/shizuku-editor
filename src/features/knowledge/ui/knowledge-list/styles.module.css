@@ -1,0 +1,75 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	min-height: 0;
+	min-width: 0;
+	overflow: hidden;
+	background: var(--bg-primary);
+}
+
+.header {
+	padding: var(--spacing-md);
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	border-bottom: 1px solid var(--border-primary);
+}
+
+.headerTop {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--spacing-sm);
+}
+
+.title {
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-semibold);
+	color: var(--text-primary);
+	margin: 0;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.actions {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-xs);
+}
+
+.body {
+	flex: 1;
+	min-height: 0;
+	min-width: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding: var(--spacing-sm) 0;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	padding: 0 var(--spacing-sm);
+}
+
+.empty {
+	padding: var(--spacing-lg);
+	text-align: center;
+	color: var(--text-tertiary);
+	font-size: var(--font-size-sm);
+	white-space: pre-line;
+}
+
+.inlineInput {
+	padding: 0 var(--spacing-sm);
+}
+
+.inlineInput :global(input) {
+	min-height: var(--spacing-xl);
+	line-height: 1.4;
+	padding: var(--spacing-xs);
+}

@@ -1,0 +1,17 @@
+.container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	z-index: 15;
+	background: var(--bg-tertiary);
+}
+
+.dragRegion {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 28px;
+}

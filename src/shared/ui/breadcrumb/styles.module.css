@@ -1,0 +1,82 @@
+.breadcrumb {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-xs);
+	font-size: var(--font-size-sm);
+	color: var(--text-secondary);
+	min-width: 0;
+	overflow: hidden;
+}
+
+.item {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	flex-shrink: 1;
+	min-width: 0;
+
+	background: none;
+	border: none;
+	padding: var(--spacing-xs) var(--spacing-sm);
+	margin: 0;
+	font: inherit;
+	color: inherit;
+	border-radius: var(--radius-sm);
+	opacity: 0.7;
+	transition:
+		color var(--transition-fast),
+		background-color var(--transition-fast),
+		opacity var(--transition-fast);
+}
+
+.item[data-clickable] {
+	cursor: pointer;
+}
+
+.item[data-clickable]:hover {
+	color: var(--text-primary);
+	background: var(--bg-hover);
+	opacity: 1;
+}
+
+.item[data-current] {
+	color: var(--text-primary);
+	font-size: var(--font-size-md);
+	font-weight: var(--font-weight-medium);
+	opacity: 1;
+}
+
+.separator {
+	display: flex;
+	align-items: center;
+	color: var(--text-tertiary);
+	flex-shrink: 0;
+	user-select: none;
+	opacity: 0.4;
+}
+
+.item[data-editable] {
+	cursor: text;
+}
+
+.item[data-editable]:hover {
+	background: var(--bg-hover);
+	opacity: 1;
+}
+
+.editInput {
+	font: inherit;
+	font-size: var(--font-size-md);
+	color: var(--text-primary);
+	background: var(--bg-secondary);
+	border: 1px solid var(--border-primary);
+	border-radius: var(--radius-sm);
+	padding: 2px 6px;
+	min-width: 60px;
+	max-width: 200px;
+	outline: none;
+}
+
+.editInput:focus {
+	border-color: var(--accent-primary);
+}

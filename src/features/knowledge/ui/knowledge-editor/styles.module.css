@@ -1,0 +1,112 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+	min-width: 0;
+	overflow: hidden;
+}
+
+.header {
+	padding: var(--spacing-md);
+	border-bottom: 1px solid var(--border-primary);
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-md);
+	overflow: hidden;
+	flex-shrink: 0;
+}
+
+.titleWrapper {
+	flex: 1;
+	min-width: 0;
+}
+
+.titleButton {
+	display: inline-block;
+	max-width: 100%;
+	text-align: left;
+	font-size: var(--font-size-lg);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height-normal);
+	color: var(--text-primary);
+	background: transparent;
+	border: 1px solid transparent;
+	padding: 0 var(--spacing-xs);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	cursor: pointer;
+	transition: color 150ms ease;
+}
+
+.titleButton:hover {
+	color: var(--accent-primary);
+}
+
+.titleInput.titleInput {
+	font-size: var(--font-size-lg);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--line-height-normal);
+	padding: 0 var(--spacing-xs);
+	min-height: auto;
+}
+
+.tagChips {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-xs);
+	padding: 0;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+.tagChip {
+	display: inline-flex;
+	align-items: center;
+	padding: var(--spacing-xs) var(--spacing-sm);
+	border-radius: var(--radius-full);
+	background: var(--bg-tertiary);
+	color: var(--text-tertiary);
+	font-size: var(--font-size-xs);
+	line-height: 1.4;
+	white-space: nowrap;
+	transition: background-color 100ms ease-out;
+}
+
+.tagChips:hover .tagChip {
+	background: var(--bg-hover);
+	color: var(--text-secondary);
+}
+
+.tagPopover {
+	padding: var(--spacing-sm);
+	min-width: 200px;
+}
+
+.editorWrapper {
+	flex: 1;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.tiptapEditor {
+	flex: 1;
+	min-height: 0;
+	display: flex;
+	height: 100%;
+	overflow-y: auto;
+	padding: var(--spacing-lg) var(--spacing-xl);
+	box-sizing: border-box;
+}
+
+.empty {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	color: var(--text-tertiary);
+	font-size: var(--font-size-sm);
+}

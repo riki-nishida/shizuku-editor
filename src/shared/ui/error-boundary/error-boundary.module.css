@@ -1,0 +1,42 @@
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background-color: var(--bg-primary);
+}
+
+.content {
+	text-align: center;
+	padding: var(--spacing-2xl);
+}
+
+.title {
+	font-size: var(--font-size-2xl);
+	font-weight: var(--font-weight-semibold);
+	color: var(--text-primary);
+	margin-bottom: var(--spacing-lg);
+}
+
+.message {
+	font-size: var(--font-size-sm);
+	color: var(--text-secondary);
+	margin-bottom: var(--spacing-xl);
+	line-height: 1.6;
+}
+
+.button {
+	padding: var(--spacing-md) var(--spacing-lg);
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-medium);
+	color: var(--text-on-accent);
+	background-color: var(--accent-primary);
+	border: none;
+	border-radius: var(--radius-lg);
+	cursor: pointer;
+	transition: opacity 0.15s;
+}
+
+.button:hover {
+	opacity: 0.9;
+}

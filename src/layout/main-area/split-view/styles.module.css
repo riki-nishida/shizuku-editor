@@ -1,0 +1,135 @@
+.splitterRoot {
+	display: flex;
+	flex: 1;
+	min-height: 0;
+	min-width: 0;
+	overflow: hidden;
+}
+
+.splitterPanel {
+	display: flex;
+	min-height: 0;
+	min-width: 0;
+	overflow: hidden;
+}
+
+.resizeTrigger {
+	background: var(--border-primary);
+	border: none;
+	position: relative;
+	transition: background 0.15s ease;
+	z-index: 10;
+	flex-shrink: 0;
+}
+
+.resizeTriggerHorizontal {
+	width: 1px;
+	cursor: col-resize;
+}
+
+.resizeTriggerVertical {
+	height: 1px;
+	cursor: row-resize;
+}
+
+.resizeTrigger::after {
+	content: "";
+	position: absolute;
+}
+
+.resizeTriggerHorizontal::after {
+	left: -3px;
+	top: 0;
+	bottom: 0;
+	width: 7px;
+}
+
+.resizeTriggerVertical::after {
+	top: -3px;
+	left: 0;
+	right: 0;
+	height: 7px;
+}
+
+.resizeTrigger:hover {
+	background: var(--border-hover);
+}
+
+.resizeTrigger:focus-visible {
+	background: var(--accent-primary);
+	outline: none;
+}
+
+.resizeTrigger[data-disabled] {
+	pointer-events: none;
+	cursor: default;
+}
+
+.pane {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	min-height: 0;
+	min-width: 0;
+	overflow: hidden;
+	position: relative;
+}
+
+.pane::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: var(--bg-primary);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity var(--transition-fast);
+	z-index: 1;
+}
+
+.paneInactive::after {
+	opacity: 0.5;
+}
+
+.paneContent {
+	flex: 1;
+	min-height: 0;
+	min-width: 0;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.scenePanel {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	width: 100%;
+	min-width: 0;
+	min-height: 0;
+	background: var(--bg-tertiary);
+}
+
+.scenePanelVertical {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.emptyPane {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: var(--spacing-xl);
+	color: var(--text-tertiary);
+	gap: var(--spacing-md);
+}
+
+.emptyPaneIcon {
+	opacity: 0.5;
+}
+
+.emptyPaneText {
+	font-size: var(--font-size-sm);
+	text-align: center;
+}

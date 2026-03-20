@@ -1,0 +1,61 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	min-height: 0;
+}
+
+.body {
+	flex: 1;
+	min-height: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding: var(--spacing-xs) var(--spacing-md);
+}
+
+.tree {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+.group {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+.children {
+	margin-left: calc(var(--spacing-md) + var(--spacing-md));
+	padding-left: var(--spacing-md);
+	border-left: 1px solid var(--border-primary);
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+.groupIndicator {
+	position: relative;
+}
+
+.groupIndicatorBefore::before {
+	content: "";
+	position: absolute;
+	top: -2px;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background: var(--accent-indicator);
+	border-radius: 1px;
+}
+
+.groupIndicatorAfter::after {
+	content: "";
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background: var(--accent-indicator);
+	border-radius: 1px;
+}

@@ -1,0 +1,19 @@
+{
+  "identifier": "com.shizuku.editor",
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Shizuku Editor",
+        "width": 1400,
+        "height": 880,
+        "minWidth": 960,
+        "minHeight": 640,
+        "center": true,
+        "decorations": true,
+        "titleBarStyle": "Overlay",
+        "hiddenTitle": true
+      }
+    ]
+  }
+}

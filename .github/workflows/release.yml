@@ -1,0 +1,102 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to release (e.g., 0.1.0)'
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  verify-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Verify version consistency
+        run: |
+          INPUT_VERSION="${{ github.event.inputs.version }}"
+
+          CARGO_VERSION=$(grep -m1 '^version' src-tauri/Cargo.toml | sed 's/.*"\(.*\)"/\1/')
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          TAURI_VERSION=$(node -p "require('./src-tauri/tauri.conf.json').version")
+
+          echo "Input version:      $INPUT_VERSION"
+          echo "Cargo.toml version: $CARGO_VERSION"
+          echo "package.json version: $PACKAGE_VERSION"
+          echo "tauri.conf.json version: $TAURI_VERSION"
+
+          ERRORS=()
+          if [ "$INPUT_VERSION" != "$CARGO_VERSION" ]; then
+            ERRORS+=("Cargo.toml ($CARGO_VERSION)")
+          fi
+          if [ "$INPUT_VERSION" != "$PACKAGE_VERSION" ]; then
+            ERRORS+=("package.json ($PACKAGE_VERSION)")
+          fi
+          if [ "$INPUT_VERSION" != "$TAURI_VERSION" ]; then
+            ERRORS+=("tauri.conf.json ($TAURI_VERSION)")
+          fi
+
+          if [ ${#ERRORS[@]} -gt 0 ]; then
+            echo "::error::Version mismatch! Input version is $INPUT_VERSION but mismatched in: ${ERRORS[*]}"
+            exit 1
+          fi
+
+          echo "All versions match: $INPUT_VERSION"
+
+  build:
+    needs: verify-version
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: macos-latest
+            args: --target universal-apple-darwin
+            name: macOS
+          - platform: windows-latest
+            args: ''
+            name: Windows
+
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
+
+      - name: Rust cache
+        uses: swatinem/rust-cache@v2
+        with:
+          workspaces: './src-tauri -> target'
+
+      - name: Install frontend dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build and release
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+        with:
+          tagName: v${{ github.event.inputs.version }}
+          releaseCommitish: main
+          releaseName: 'Shizuku Editor v${{ github.event.inputs.version }}'
+          releaseBody: "[CHANGELOG](https://github.com/riki-nishida/shizuku-editor/blob/main/CHANGELOG.md)"
+          releaseDraft: true
+          prerelease: false
+          args: ${{ matrix.args }}

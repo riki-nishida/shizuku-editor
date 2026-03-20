@@ -1,0 +1,356 @@
+@import "@shared/tokens/index.css";
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+*:focus {
+	outline: none;
+}
+
+html.disable-transitions,
+html.disable-transitions *,
+html.disable-transitions *::before,
+html.disable-transitions *::after {
+	transition: none;
+}
+
+* {
+	scrollbar-width: thin;
+	scrollbar-color: var(--border-secondary) transparent;
+}
+
+*::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+	background: var(--border-secondary);
+	border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+	background: var(--text-tertiary);
+}
+
+html,
+body {
+	height: 100vh;
+	overflow: hidden;
+}
+
+body {
+	font-family:
+		"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	font-size: var(--font-size-md);
+	line-height: 1.5;
+	background: var(--bg-primary);
+	color: var(--text-primary);
+
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+input,
+textarea,
+[contenteditable="true"],
+.ProseMirror,
+.tiptap-editor {
+	user-select: text;
+	-webkit-user-select: text;
+}
+
+#root {
+	height: 100vh;
+	overflow: hidden;
+}
+
+.tiptap-editor .ProseMirror {
+	flex: 1;
+	outline: none;
+	border: none;
+	font: inherit;
+	color: inherit;
+	line-height: inherit;
+	white-space: pre-wrap;
+	background: transparent;
+	padding: 0;
+	min-height: 100%;
+	caret-color: var(--accent-primary);
+}
+
+.tiptap-editor .ProseMirror p.is-editor-empty:first-child::before {
+	color: var(--text-secondary);
+	content: attr(data-placeholder);
+	pointer-events: none;
+}
+
+.tiptap-editor .search-result {
+	background-color: rgba(140, 110, 70, 0.2);
+	border-radius: var(--radius-sm);
+	padding: 1px 0;
+}
+
+.tiptap-editor .search-result-current {
+	background-color: rgba(140, 110, 70, 0.4);
+	border-radius: var(--radius-sm);
+	padding: 1px 0;
+	box-shadow: 0 0 0 1px rgba(140, 110, 70, 0.5);
+}
+
+:root[data-theme="dark"] .tiptap-editor .search-result {
+	background-color: rgba(180, 150, 100, 0.2);
+}
+
+:root[data-theme="dark"] .tiptap-editor .search-result-current {
+	background-color: rgba(180, 150, 100, 0.4);
+	box-shadow: 0 0 0 1px rgba(180, 150, 100, 0.5);
+}
+
+.tiptap-editor .ProseMirror {
+	line-break: strict;
+	word-break: normal;
+	overflow-wrap: break-word;
+}
+
+.tiptap-editor ruby {
+	ruby-align: center;
+	ruby-position: over;
+}
+
+.tiptap-editor rt {
+	font-size: 0.5em;
+	line-height: 1;
+	text-align: center;
+}
+
+.vertical .ProseMirror {
+	font-feature-settings:
+		"vrt2" 1,
+		"vert" 1;
+
+	hanging-punctuation: allow-end last force-end;
+
+	line-break: strict;
+	word-break: normal;
+	overflow-wrap: break-word;
+}
+
+.vertical .ProseMirror ruby {
+	ruby-position: right;
+}
+
+.vertical .ProseMirror rt {
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+}
+
+.tiptap-editor .ruby-notation::before {
+	content: "|";
+	color: var(--text-tertiary);
+	font-size: 0.9em;
+}
+
+.tiptap-editor .ruby-notation::after {
+	content: "《" attr(data-ruby) "》";
+	color: var(--text-tertiary);
+	font-size: 0.9em;
+}
+
+.tiptap-editor .emphasis-dot {
+	text-emphasis: filled sesame;
+	text-emphasis-position: over right;
+	-webkit-text-emphasis: filled sesame;
+	-webkit-text-emphasis-position: over right;
+}
+
+.vertical .ProseMirror .emphasis-dot {
+	text-emphasis-position: right;
+	-webkit-text-emphasis-position: right;
+}
+
+.tiptap-editor .emphasis-dot-notation::before {
+	content: "《《";
+	color: var(--text-tertiary);
+	font-size: 0.9em;
+}
+
+.tiptap-editor .emphasis-dot-notation::after {
+	content: "》》";
+	color: var(--text-tertiary);
+	font-size: 0.9em;
+}
+
+.tiptap-editor .tate-chu-yoko {
+	text-combine-upright: all;
+	-webkit-text-combine: horizontal;
+}
+
+.tiptap-editor .auto-tate-chu-yoko {
+	text-combine-upright: all;
+	-webkit-text-combine: horizontal;
+}
+
+.tiptap-editor .annotation-mark {
+	background-color: rgba(255, 235, 59, 0.35);
+	border-bottom: 2px solid rgba(255, 193, 7, 0.6);
+	padding: 1px 0;
+	cursor: pointer;
+	transition: background-color 150ms ease;
+	position: relative;
+}
+
+.tiptap-editor .annotation-mark:hover {
+	background-color: rgba(255, 235, 59, 0.55);
+}
+
+.tiptap-editor .annotation-mark::after {
+	content: attr(data-annotation-comment);
+	position: absolute;
+	left: 0;
+	top: 100%;
+	margin-top: 6px;
+	padding: 8px 12px;
+	background: var(--surface-elevated);
+	border: 1px solid var(--border-primary);
+	border-radius: var(--radius-md);
+	box-shadow: var(--shadow-lg);
+	font-size: var(--font-size-xs);
+	line-height: 1.4;
+	color: var(--text-primary);
+	white-space: pre-wrap;
+	max-width: 280px;
+	min-width: 120px;
+	z-index: var(--z-tooltip);
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(-4px);
+	transition:
+		opacity 150ms ease,
+		transform 150ms ease,
+		visibility 150ms ease;
+	pointer-events: none;
+}
+
+.tiptap-editor .annotation-mark:hover::after {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+
+.vertical .ProseMirror .annotation-mark::after {
+	left: 100%;
+	top: 0;
+	margin-top: 0;
+	margin-left: 6px;
+	transform: translateX(-4px);
+	writing-mode: horizontal-tb;
+	text-orientation: mixed;
+}
+
+.vertical .ProseMirror .annotation-mark:hover::after {
+	transform: translateX(0);
+}
+
+.tiptap-editor .auto-indent {
+	text-indent: 1em;
+}
+
+.tiptap-editor.focus-mode .ProseMirror p,
+.tiptap-editor.focus-mode .ProseMirror h1,
+.tiptap-editor.focus-mode .ProseMirror h2,
+.tiptap-editor.focus-mode .ProseMirror h3,
+.tiptap-editor.focus-mode .ProseMirror blockquote {
+	opacity: 0.3;
+	transition: opacity 200ms ease;
+}
+
+.tiptap-editor.focus-mode .ProseMirror p.is-active,
+.tiptap-editor.focus-mode .ProseMirror h1.is-active,
+.tiptap-editor.focus-mode .ProseMirror h2.is-active,
+.tiptap-editor.focus-mode .ProseMirror h3.is-active,
+.tiptap-editor.focus-mode .ProseMirror blockquote.is-active {
+	opacity: 1;
+}
+
+.tiptap-editor.typewriter-mode .ProseMirror {
+	padding-bottom: 50vh;
+}
+
+.tiptap-editor.typewriter-mode.vertical .ProseMirror {
+	padding-bottom: 0;
+	padding-left: 50vw;
+}
+
+.tiptap-editor.genko-yoshi-mode {
+	--genko-cell-size: 1.6em;
+	--genko-line-color: color-mix(
+		in srgb,
+		var(--accent-primary) 25%,
+		transparent
+	);
+}
+
+.tiptap-editor.genko-yoshi-mode .ProseMirror {
+	font-family:
+		"游明朝 Medium", "Yu Mincho Medium", "游明朝", "Yu Mincho", "YuMincho",
+		"ヒラギノ明朝 ProN", "Hiragino Mincho ProN", "MS 明朝", "MS Mincho", serif;
+
+	line-height: var(--genko-cell-size);
+
+	line-break: strict;
+	hanging-punctuation: allow-end last;
+
+	background-image:
+		repeating-linear-gradient(
+			to bottom,
+			var(--genko-line-color) 0,
+			var(--genko-line-color) 1px,
+			transparent 1px,
+			transparent var(--genko-cell-size)
+		),
+		repeating-linear-gradient(
+			to right,
+			var(--genko-line-color) 0,
+			var(--genko-line-color) 1px,
+			transparent 1px,
+			transparent var(--genko-cell-size)
+		);
+	background-size:
+		100% var(--genko-cell-size),
+		var(--genko-cell-size) 100%;
+	background-position:
+		0 calc(var(--genko-cell-size) - 0.15em),
+		0 0;
+}
+
+.tiptap-editor.genko-yoshi-mode.vertical .ProseMirror {
+	line-height: var(--genko-cell-size);
+
+	letter-spacing: 0;
+
+	background-position:
+		0 0,
+		calc(var(--genko-cell-size) - 0.15em) 0;
+}
+
+div[data-tauri-decorum-tb] {
+	pointer-events: none;
+}
+
+div[data-tauri-decorum-tb] button {
+	pointer-events: auto;
+}
+
+:root[data-theme="dark"] button.decorum-tb-btn {
+	color: var(--text-primary);
+}

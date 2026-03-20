@@ -1,0 +1,8 @@
+pnpm lint-staged
+
+if git diff --cached --name-only | grep -q '\.rs$'; then
+  cd src-tauri
+  cargo fmt
+  git add -u .
+  cargo clippy -- -D warnings
+fi

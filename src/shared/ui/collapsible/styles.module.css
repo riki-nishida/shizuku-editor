@@ -1,0 +1,60 @@
+.root {
+	width: 100%;
+}
+
+.trigger {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	width: 100%;
+	padding: 0;
+	border: none;
+	background: none;
+	cursor: pointer;
+	text-align: left;
+}
+
+.content {
+	overflow: hidden;
+}
+
+.content[data-state="open"] {
+	animation: slideDown 150ms ease-out;
+}
+
+.content[data-state="closed"] {
+	animation: slideUp 150ms ease-out;
+}
+
+.indicator {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: transform 150ms ease-out;
+}
+
+.indicator[data-state="open"] {
+	transform: rotate(0deg);
+}
+
+.indicator[data-state="closed"] {
+	transform: rotate(-90deg);
+}
+
+@keyframes slideDown {
+	from {
+		height: 0;
+	}
+	to {
+		height: var(--height);
+	}
+}
+
+@keyframes slideUp {
+	from {
+		height: var(--height);
+	}
+	to {
+		height: 0;
+	}
+}

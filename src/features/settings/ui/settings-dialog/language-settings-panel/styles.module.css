@@ -1,0 +1,15 @@
+.container {
+	padding: var(--spacing-lg);
+}
+
+.selectRow {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--spacing-sm) 0;
+}
+
+.selectRow span {
+	font-size: var(--font-size-sm);
+	color: var(--text-primary);
+}
