@@ -1,0 +1,90 @@
+.container {
+	z-index: var(--z-notification);
+	width: 384px;
+}
+
+.toast {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--spacing-sm);
+	padding: var(--spacing-md);
+	background: var(--surface-elevated);
+	border-radius: var(--radius-md);
+	box-shadow: var(--shadow-lg);
+	border: 1px solid var(--border-primary);
+	border-left: 3px solid var(--border-primary);
+	animation: slideIn 200ms ease-out;
+	min-width: 320px;
+}
+
+.toast.success {
+	border-left-color: var(--success);
+}
+
+.toast.error {
+	border-left-color: var(--error);
+}
+
+.toast.info {
+	border-left-color: var(--info);
+}
+
+.content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+}
+
+.message {
+	font-size: var(--font-size-sm);
+	color: var(--text-primary);
+	line-height: 1.5;
+}
+
+.actionButton {
+	align-self: flex-start;
+	padding: var(--spacing-xs) var(--spacing-sm);
+	background: var(--bg-secondary);
+	border: 1px solid var(--border-primary);
+	border-radius: var(--radius-sm);
+	font-size: var(--font-size-xs);
+	color: var(--text-primary);
+	cursor: pointer;
+	transition: background-color var(--transition-fast);
+}
+
+.actionButton:hover {
+	background: var(--bg-tertiary);
+}
+
+.closeButton {
+	flex-shrink: 0;
+	width: var(--spacing-xl);
+	height: var(--spacing-xl);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	border-radius: var(--radius-sm);
+	background: transparent;
+	color: var(--text-secondary);
+	cursor: pointer;
+	transition: background-color var(--transition-fast);
+}
+
+.closeButton:hover {
+	background: var(--bg-tertiary);
+	color: var(--text-primary);
+}
+
+@keyframes slideIn {
+	from {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}

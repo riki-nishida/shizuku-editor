@@ -1,0 +1,24 @@
+.content {
+	width: 100%;
+	max-width: 960px;
+	height: 85vh;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.body {
+	display: grid;
+	grid-template-columns: 320px 1fr;
+	flex: 1;
+	min-height: 0;
+	overflow: hidden;
+}
+
+.bodyCollapsed {
+	display: grid;
+	grid-template-columns: 48px 1fr;
+	flex: 1;
+	min-height: 0;
+	overflow: hidden;
+}

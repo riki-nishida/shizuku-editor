@@ -1,0 +1,18 @@
+.iconWrapper {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+.colorDot {
+	display: inline-block;
+	flex-shrink: 0;
+	width: var(--spacing-8);
+	height: var(--spacing-8);
+	border-radius: 50%;
+}
+
+:global(:root[data-theme="dark"]) .colorDot {
+	filter: saturate(0.6) brightness(0.85);
+}

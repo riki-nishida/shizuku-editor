@@ -1,0 +1,9 @@
+:root {
+	--radius-xs: var(--radius-1);
+	--radius-sm: var(--radius-2);
+	--radius-md: var(--radius-4);
+	--radius-lg: var(--radius-6);
+	--radius-xl: var(--radius-8);
+	--radius-2xl: var(--radius-12);
+	--radius-full: 9999px;
+}

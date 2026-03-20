@@ -1,0 +1,11 @@
+.footer {
+	flex-shrink: 0;
+	padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.value {
+	font-size: var(--font-size-xs);
+	font-weight: var(--font-weight-medium);
+	font-variant-numeric: tabular-nums;
+	color: var(--text-secondary);
+}

@@ -1,0 +1,90 @@
+.list {
+	display: flex;
+	flex-direction: column;
+}
+
+.item {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--spacing-sm);
+	padding: var(--spacing-xs) var(--spacing-sm);
+	border-radius: var(--radius-md);
+	transition: background 150ms ease;
+}
+
+.item:hover {
+	background: var(--bg-hover);
+}
+
+.itemButton {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	padding: 0;
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	text-align: left;
+}
+
+.itemButton:focus-visible {
+	outline: none;
+	box-shadow: 0 0 0 2px var(--accent-ring);
+	border-radius: var(--radius-sm);
+}
+
+.comment {
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-medium);
+	color: var(--text-primary);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.targetText {
+	font-size: var(--font-size-xs);
+	color: var(--text-secondary);
+	border-left: 2px solid rgba(255, 193, 7, 0.5);
+	padding-left: var(--spacing-xs);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.deleteButton {
+	flex-shrink: 0;
+	width: 20px;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	background: transparent;
+	color: var(--text-tertiary);
+	border-radius: var(--radius-sm);
+	cursor: pointer;
+	opacity: 0;
+	transition: all 120ms ease;
+}
+
+.item:hover .deleteButton {
+	opacity: 1;
+}
+
+.deleteButton:hover {
+	background: var(--bg-hover);
+	color: var(--color-danger);
+}
+
+.emptyState {
+	padding: var(--spacing-md);
+	text-align: center;
+}
+
+.emptyText {
+	font-size: var(--font-size-xs);
+	color: var(--text-tertiary);
+}

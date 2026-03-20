@@ -1,0 +1,11 @@
+:root {
+	--spacing-2xs: var(--spacing-2);
+	--spacing-xs: var(--spacing-2);
+	--spacing-sm: var(--spacing-4);
+	--spacing-md: var(--spacing-8);
+	--spacing-lg: var(--spacing-16);
+	--spacing-xl: var(--spacing-24);
+	--spacing-2xl: var(--spacing-32);
+	--spacing-3xl: var(--spacing-40);
+	--spacing-4xl: var(--spacing-48);
+}

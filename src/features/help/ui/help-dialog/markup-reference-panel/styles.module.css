@@ -1,0 +1,64 @@
+.root {
+	padding: var(--spacing-lg) var(--spacing-xl);
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-md);
+}
+
+.card {
+	padding: var(--spacing-md);
+	border: 1px solid var(--border-secondary);
+	border-radius: var(--radius-md);
+	background: var(--bg-secondary);
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+	margin-bottom: var(--spacing-xs);
+}
+
+.name {
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-semibold);
+	color: var(--text-primary);
+	margin: 0;
+}
+
+.autoBadge {
+	font-size: var(--font-size-xs);
+	color: var(--text-tertiary);
+	background: var(--bg-tertiary);
+	padding: 1px var(--spacing-xs);
+	border-radius: var(--radius-sm);
+}
+
+.description {
+	font-size: var(--font-size-sm);
+	color: var(--text-secondary);
+	margin: 0 0 var(--spacing-sm) 0;
+	line-height: 1.5;
+}
+
+.inputExample {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+}
+
+.inputLabel {
+	font-size: var(--font-size-xs);
+	color: var(--text-tertiary);
+	flex-shrink: 0;
+}
+
+.inputCode {
+	font-family: var(--font-family-mono, monospace);
+	font-size: var(--font-size-sm);
+	color: var(--text-primary);
+	background: var(--bg-primary);
+	padding: var(--spacing-xs) var(--spacing-sm);
+	border-radius: var(--radius-sm);
+	border: 1px solid var(--border-primary);
+}

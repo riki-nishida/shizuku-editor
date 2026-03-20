@@ -1,0 +1,28 @@
+:root {
+	--font-10: 10px;
+	--font-11: 11px;
+	--font-12: 12px;
+	--font-13: 13px;
+	--font-14: 14px;
+	--font-15: 15px;
+	--font-16: 16px;
+	--font-18: 18px;
+	--font-20: 20px;
+	--font-24: 24px;
+	--font-28: 28px;
+	--font-32: 32px;
+	--font-48: 48px;
+	--font-64: 64px;
+
+	--weight-400: 400;
+	--weight-500: 500;
+	--weight-600: 600;
+	--weight-700: 700;
+
+	--leading-none: 1;
+	--leading-tight: 1.25;
+	--leading-snug: 1.375;
+	--leading-normal: 1.5;
+	--leading-relaxed: 1.625;
+	--leading-loose: 2;
+}

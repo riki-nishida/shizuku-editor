@@ -1,0 +1,25 @@
+<svg
+  width="32"
+  height="32"
+  viewBox="0 0 32 32"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <linearGradient
+      id="shizuku-light"
+      x1="16"
+      y1="0"
+      x2="16"
+      y2="32"
+      gradientUnits="userSpaceOnUse"
+    >
+      <stop stop-color="#1a1918" />
+      <stop offset="1" stop-color="#545350" />
+    </linearGradient>
+  </defs>
+  <path
+    d="M16 3.2L22.4 20C22.4 24.2 19.62 27.6 16 27.6C12.38 27.6 9.6 24.2 9.6 20L16 3.2Z"
+    fill="url(#shizuku-light)"
+  />
+</svg>

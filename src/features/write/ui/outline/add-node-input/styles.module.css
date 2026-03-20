@@ -1,0 +1,30 @@
+.root {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-xs);
+	padding: 0 var(--spacing-sm);
+	min-height: var(--spacing-xl);
+}
+
+.icon {
+	width: var(--spacing-lg);
+	height: var(--spacing-lg);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	color: var(--text-primary);
+}
+
+.icon svg {
+	width: var(--font-14);
+	height: var(--font-14);
+}
+
+.input {
+	flex: 1;
+	min-width: 0;
+	min-height: var(--spacing-xl);
+	line-height: var(--spacing-xl);
+	padding: 0 var(--spacing-xs);
+}

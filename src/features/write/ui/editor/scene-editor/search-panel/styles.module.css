@@ -1,0 +1,150 @@
+.searchPanel {
+	position: absolute;
+	top: var(--spacing-sm);
+	right: var(--spacing-sm);
+	background: var(--surface-elevated);
+	border: 1px solid var(--border-primary);
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow-xl);
+	padding: var(--spacing-sm);
+	z-index: var(--z-dropdown);
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xs);
+}
+
+.searchRow,
+.replaceRow {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.searchInput {
+	flex: 1;
+	min-width: 0;
+	min-height: 24px;
+	line-height: 24px;
+	font-size: var(--font-size-xs);
+}
+
+.resultsCount {
+	min-width: 48px;
+	text-align: center;
+	font-size: var(--font-size-xs);
+	color: var(--text-tertiary);
+	flex-shrink: 0;
+	font-variant-numeric: tabular-nums;
+}
+
+.navButton,
+.toggleButton,
+.closeButton {
+	width: 24px;
+	height: 24px;
+	padding: 0;
+	border: none;
+	border-radius: var(--radius-md);
+	background: transparent;
+	color: var(--text-secondary);
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 120ms ease;
+	flex-shrink: 0;
+}
+
+.navButton:hover:not(:disabled),
+.toggleButton:hover,
+.closeButton:hover {
+	background: var(--bg-hover);
+	color: var(--text-primary);
+}
+
+.navButton:active:not(:disabled),
+.toggleButton:active,
+.closeButton:active {
+	transform: scale(0.95);
+}
+
+.navButton:disabled {
+	opacity: 0.3;
+	cursor: not-allowed;
+}
+
+.toggleSpacer {
+	width: 24px;
+	flex-shrink: 0;
+}
+
+.replaceButton {
+	height: 24px;
+	padding: 0 var(--spacing-sm);
+	border: 1px solid var(--border-primary);
+	border-radius: var(--radius-md);
+	background: var(--bg-primary);
+	color: var(--text-secondary);
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: var(--font-size-xs);
+	font-weight: var(--font-weight-medium);
+	white-space: nowrap;
+	transition: all 120ms ease;
+}
+
+.replaceButton:hover:not(:disabled) {
+	background: var(--bg-hover);
+	color: var(--text-primary);
+	border-color: var(--border-secondary);
+}
+
+.replaceButton:active:not(:disabled) {
+	transform: scale(0.97);
+}
+
+.replaceButton:disabled {
+	opacity: 0.3;
+	cursor: not-allowed;
+}
+
+.caseSensitiveButton {
+	width: 24px;
+	height: 24px;
+	padding: 0;
+	border: 1px solid var(--border-primary);
+	border-radius: var(--radius-md);
+	background: var(--bg-primary);
+	color: var(--text-tertiary);
+	cursor: pointer;
+	user-select: none;
+	font-size: 11px;
+	font-weight: var(--font-weight-semibold);
+	transition: all 120ms ease;
+	flex-shrink: 0;
+}
+
+.caseSensitiveButton:hover {
+	background: var(--bg-hover);
+	color: var(--text-secondary);
+	border-color: var(--border-secondary);
+}
+
+.caseSensitiveButton[data-active="true"] {
+	background: var(--accent-primary);
+	border-color: var(--accent-primary);
+	color: var(--text-on-accent);
+}
+
+.caseSensitiveButton[data-active="true"]:hover {
+	background: var(--accent-hover);
+	border-color: var(--accent-hover);
+}
+
+.verticalSearchPanel {
+	top: var(--spacing-sm);
+	left: var(--spacing-sm);
+	right: auto;
+}

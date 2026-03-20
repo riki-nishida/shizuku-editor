@@ -1,0 +1,88 @@
+.controls {
+	display: flex;
+	height: 100%;
+	gap: var(--spacing-2xs);
+	align-items: center;
+}
+
+.controlButton {
+	width: 46px;
+	height: 100%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	background: transparent;
+	color: var(--text-secondary);
+	font-size: var(--font-size-md);
+	cursor: pointer;
+	transition:
+		background 0.2s ease,
+		color 0.2s ease;
+}
+
+.controlButton:hover {
+	background: var(--bg-hover);
+	color: var(--text-primary);
+}
+
+.controlButton:focus-visible {
+	outline: 2px solid var(--accent-primary);
+	outline-offset: -2px;
+}
+
+.closeButton:hover {
+	background: var(--accent-primary);
+	color: var(--white);
+}
+
+.macButton {
+	width: var(--spacing-12);
+	height: var(--spacing-12);
+	border-radius: 50%;
+	font-size: 9px;
+	padding: 0;
+	margin-right: var(--spacing-sm);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.macButtonIcon {
+	opacity: 0;
+	transition: opacity 0.15s ease;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 9px;
+	line-height: 1;
+	color: rgba(0, 0, 0, 0.7);
+	font-weight: bold;
+}
+
+.macButton:hover .macButtonIcon {
+	opacity: 1;
+}
+
+.macButton:nth-child(1) {
+	background: #ff5f57;
+}
+
+.macButton:nth-child(2) {
+	background: #febc2e;
+}
+
+.macButton:nth-child(3) {
+	background: #28c840;
+}
+
+.macButton:hover {
+	opacity: 0.9;
+}
+
+.macButton.closeButton:hover {
+	background: #ff5f57;
+	opacity: 0.9;
+}

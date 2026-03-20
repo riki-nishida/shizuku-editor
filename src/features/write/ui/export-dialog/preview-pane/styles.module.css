@@ -1,0 +1,78 @@
+.preview {
+	background: var(--bg-secondary);
+	padding: var(--spacing-lg);
+	font-family: "Noto Serif JP", serif;
+	color: var(--text-primary);
+	font-size: 14.5px;
+	line-height: 2;
+	position: relative;
+	overflow: auto;
+}
+
+.vertical {
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+}
+
+.horizontal {
+	writing-mode: horizontal-tb;
+}
+
+.textContent {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.htmlContent {
+	word-break: break-all;
+}
+
+.vertical .content {
+	height: 100%;
+}
+
+.horizontal .content {
+	width: 100%;
+}
+
+.textContent p {
+	text-indent: 1em;
+}
+
+.htmlContent p {
+	margin: 0;
+}
+
+.horizontal .htmlContent p:global(.empty) {
+	height: 1lh;
+}
+
+.vertical .htmlContent p:global(.empty) {
+	width: 1lh;
+}
+
+.htmlContent h2,
+.htmlContent h3 {
+	font-size: inherit;
+	font-weight: inherit;
+	color: inherit;
+	margin: 0;
+}
+
+.htmlContent :global(.scene-separator) {
+	text-align: center;
+	margin: 1em 0;
+}
+
+.htmlContent ruby {
+	ruby-align: center;
+}
+
+.htmlContent rt {
+	font-size: 0.5em;
+}
+
+.htmlContent :global(.emphasis) {
+	text-emphasis-style: filled dot;
+	-webkit-text-emphasis-style: filled dot;
+}

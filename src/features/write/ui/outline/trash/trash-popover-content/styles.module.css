@@ -1,0 +1,26 @@
+.content {
+	display: flex;
+	flex-direction: column;
+	min-width: 200px;
+	max-width: 280px;
+	max-height: 300px;
+}
+
+.title {
+	font-size: var(--font-size-xs);
+	font-weight: var(--font-weight-semibold);
+	color: var(--text-secondary);
+	letter-spacing: 0.05em;
+	padding: var(--spacing-xs) var(--spacing-sm);
+	margin: 0;
+	border-bottom: 1px solid var(--border-primary);
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-2xs);
+	padding: var(--spacing-xs);
+	overflow-y: auto;
+	opacity: 0.8;
+}

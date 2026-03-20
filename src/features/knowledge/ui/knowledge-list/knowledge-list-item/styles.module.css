@@ -1,0 +1,24 @@
+.preview {
+	display: block;
+	width: 100%;
+	min-width: 0;
+	font-size: var(--font-size-xs);
+	line-height: 1.4;
+	color: var(--text-tertiary);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 0 var(--spacing-xs);
+}
+
+.highlight {
+	background: rgba(140, 110, 70, 0.25);
+	color: inherit;
+	border-radius: 2px;
+	padding: 0 2px;
+	margin: 0 -2px;
+}
+
+:global(:root[data-theme="dark"]) .highlight {
+	background: rgba(180, 150, 100, 0.25);
+}

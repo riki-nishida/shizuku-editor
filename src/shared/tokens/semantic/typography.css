@@ -1,0 +1,25 @@
+:root {
+	--font-size-2xs: var(--font-10);
+	--font-size-xs: var(--font-12);
+	--font-size-sm: var(--font-14);
+	--font-size-md: var(--font-16);
+	--font-size-lg: var(--font-18);
+	--font-size-xl: var(--font-20);
+	--font-size-2xl: var(--font-24);
+	--font-size-3xl: var(--font-28);
+	--font-size-4xl: var(--font-32);
+	--font-size-5xl: var(--font-48);
+	--font-size-6xl: var(--font-64);
+
+	--font-weight-normal: var(--weight-400);
+	--font-weight-medium: var(--weight-500);
+	--font-weight-semibold: var(--weight-600);
+	--font-weight-bold: var(--weight-700);
+
+	--line-height-none: var(--leading-none);
+	--line-height-tight: var(--leading-tight);
+	--line-height-snug: var(--leading-snug);
+	--line-height-normal: var(--leading-normal);
+	--line-height-relaxed: var(--leading-relaxed);
+	--line-height-loose: var(--leading-loose);
+}

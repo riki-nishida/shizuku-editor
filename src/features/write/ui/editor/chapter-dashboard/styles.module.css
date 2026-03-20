@@ -1,0 +1,23 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	background-color: var(--bg-primary);
+	overflow: hidden;
+}
+
+.content {
+	flex: 1;
+	min-height: 0;
+	padding: var(--spacing-lg) var(--spacing-xl);
+	overflow: auto;
+}
+
+.emptyState {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+	color: var(--text-secondary);
+	font-size: var(--font-size-sm);
+}

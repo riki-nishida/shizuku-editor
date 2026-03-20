@@ -1,0 +1,65 @@
+.container {
+	padding: var(--spacing-lg);
+}
+
+.toggleRow,
+.selectRow,
+.sliderRow {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--spacing-sm) 0;
+}
+
+.toggleRow span,
+.selectRow span,
+.sliderRow span {
+	font-size: var(--font-size-sm);
+	color: var(--text-primary);
+}
+
+.selectRow select {
+	padding: var(--spacing-xs) var(--spacing-sm);
+	border: 1px solid var(--border-primary);
+	border-radius: var(--radius-sm);
+	background: var(--bg-primary);
+	color: var(--text-primary);
+	font-size: var(--font-size-sm);
+	cursor: pointer;
+}
+
+.selectRow select:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+	background: var(--bg-tertiary);
+}
+
+.sliderGroup {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-md);
+}
+
+.sliderGroup input[type="range"] {
+	width: 160px;
+	cursor: pointer;
+}
+
+.sliderValue {
+	min-width: 48px;
+	text-align: right;
+	font-size: var(--font-size-sm);
+	color: var(--text-secondary);
+	font-weight: var(--font-weight-medium);
+}
+
+.toggleLabel {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-2xs);
+}
+
+.toggleDescription {
+	font-size: var(--font-size-xs);
+	color: var(--text-tertiary);
+}

@@ -1,0 +1,4 @@
+pnpm build
+pnpm exec tsc --noEmit
+pnpm test:run
+cd src-tauri && cargo test
