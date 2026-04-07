@@ -4,7 +4,9 @@
 
 A desktop writing app for authors.
 
-Shizuku Editor supports rich typography — ruby (furigana), emphasis dots, and vertical-in-horizontal text — right in the editor. Organize your manuscript into chapters and scenes, and link character profiles, world-building notes, and other references directly to each scene.
+Fully local-first — all your data stays on your machine with no account or internet connection required.
+
+Organize your manuscript into chapters and scenes, track version history with inline diffs, and link character profiles, world-building notes, and other references directly to each scene. Also supports Japanese typography features such as ruby (furigana), emphasis dots, and vertical-in-horizontal text.
 
 ## Demo
 
@@ -13,7 +15,7 @@ https://github.com/user-attachments/assets/6599f593-3795-4ac2-8a21-88631c5b3782
 ## Features
 
 - **Chapters & Scenes** — Outline-based manuscript organization with drag & drop reordering
-- **Editor** — Rich text editor with ruby (furigana), emphasis dots, and vertical-in-horizontal text support
+- **Editor** — Rich text editor. Also supports Japanese typography: ruby (furigana), emphasis dots, and vertical-in-horizontal text
 - **Split View** — View and edit two scenes side by side
 - **Version History** — Save scene snapshots and review changes with inline diffs
 - **Knowledge Base** — Link character profiles, world-building, locations, and other notes to scenes
