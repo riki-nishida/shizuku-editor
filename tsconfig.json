@@ -22,14 +22,13 @@
 		"types": ["vitest/globals", "node"],
 
 		/* Path Aliases */
-		"baseUrl": ".",
 		"paths": {
-			"@/*": ["src/*"],
-			"@app/*": ["src/app/*"],
-			"@layout/*": ["src/layout/*"],
-			"@features/*": ["src/features/*"],
-			"@shared/*": ["src/shared/*"],
-			"@test/*": ["src/test/*"]
+			"@/*": ["./src/*"],
+			"@app/*": ["./src/app/*"],
+			"@layout/*": ["./src/layout/*"],
+			"@features/*": ["./src/features/*"],
+			"@shared/*": ["./src/shared/*"],
+			"@test/*": ["./src/test/*"]
 		}
 	},
 	"include": ["src", "vite.config.ts"]
