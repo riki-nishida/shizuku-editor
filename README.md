@@ -6,9 +6,9 @@ A desktop writing app for authors.
 
 Shizuku Editor supports rich typography — ruby (furigana), emphasis dots, and vertical-in-horizontal text — right in the editor. Organize your manuscript into chapters and scenes, and link character profiles, world-building notes, and other references directly to each scene.
 
-## Screenshots
+## Demo
 
-![Main screen](docs/screenshots/main-en.png)
+https://github.com/user-attachments/assets/6599f593-3795-4ac2-8a21-88631c5b3782
 
 ## Features
 
@@ -30,6 +30,12 @@ Shizuku Editor supports rich typography — ruby (furigana), emphasis dots, and 
 Download from the [Releases](https://github.com/riki-nishida/shizuku-editor/releases) page.
 
 Supports macOS (Apple Silicon / Intel), Windows, and Linux.
+
+> **Note:** This app is not code-signed as it is provided for free. You may see a security warning when launching for the first time.
+>
+> **macOS**: Right-click the app → "Open", then click "Open" in the dialog. (Or go to System Settings → Privacy & Security → click "Open Anyway".)
+>
+> **Windows**: Click "More info" on the SmartScreen dialog → "Run anyway".
 
 ### Tech Stack
 
