@@ -6,9 +6,9 @@
 
 ルビ・傍点・縦中横などの組版機能をエディタ上でそのまま扱えます。章とシーンで原稿を構成し、登場人物や世界観のメモをシーンに紐付けて管理できます。
 
-## スクリーンショット
+## デモ
 
-![メイン画面](docs/screenshots/main.png)
+https://github.com/user-attachments/assets/edbaa1d2-0c05-4aac-ba3a-e97bce4a82d3
 
 ## 主な機能
 
@@ -30,6 +30,12 @@
 [Releases](https://github.com/riki-nishida/shizuku-editor/releases) ページからダウンロードしてください。
 
 macOS (Apple Silicon / Intel)・Windows・Linux に対応しています。
+
+> **注意:** 本アプリは無料で提供しているため、コード署名を行っておりません。そのため、初回起動時にセキュリティ警告が表示される場合があります。
+>
+> **macOS**: アプリを右クリック →「開く」→ ダイアログで「開く」をクリックしてください。（または システム設定 → プライバシーとセキュリティ →「このまま開く」）
+>
+> **Windows**: SmartScreen の警告画面で「詳細情報」→「実行」をクリックしてください。
 
 ### 技術スタック
 
