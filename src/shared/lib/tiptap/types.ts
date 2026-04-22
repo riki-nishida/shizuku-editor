@@ -1,5 +1,5 @@
+import type { ContentMarkup } from "@shared/lib/tiptap-japanese";
 import type { Extensions } from "@tiptap/core";
-import type { ContentMarkup } from "tiptap-japanese";
 
 export type EditorContent = {
 	contentText: string;

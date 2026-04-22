@@ -1,4 +1,4 @@
-import type { ContentMarkup } from "tiptap-japanese";
+import type { ContentMarkup } from "@shared/lib/tiptap-japanese";
 import { describe, expect, it } from "vitest";
 import type { SceneData } from "./manuscript-converter";
 import { htmlToScenes, scenesToHtml } from "./manuscript-converter";

@@ -1,4 +1,4 @@
-import type { ContentMarkup } from "tiptap-japanese";
+import type { ContentMarkup } from "@shared/lib/tiptap-japanese";
 
 export type ManuscriptSceneData = {
 	id: string;

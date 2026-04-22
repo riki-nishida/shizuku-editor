@@ -1,4 +1,4 @@
-export type { ContentMarkup } from "tiptap-japanese";
+export type { ContentMarkup } from "@shared/lib/tiptap-japanese";
 export {
 	Annotation,
 	AutoIndent,
@@ -10,7 +10,7 @@ export {
 	Ruby,
 	serializeMarkups,
 	TateChuYoko,
-} from "tiptap-japanese";
+} from "@shared/lib/tiptap-japanese";
 
 export {
 	FocusMode,

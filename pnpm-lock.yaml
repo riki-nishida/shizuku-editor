@@ -119,9 +119,6 @@ importers:
       react-i18next:
         specifier: ^17.0.2
         version: 17.0.2(i18next@26.0.3(typescript@6.0.2))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)(typescript@6.0.2)
-      tiptap-japanese:
-        specifier: 0.1.0
-        version: 0.1.0(@tiptap/core@3.22.0(@tiptap/pm@3.22.0))(@tiptap/pm@3.22.0)
     devDependencies:
       '@biomejs/biome':
         specifier: ^2.4.10
@@ -2533,12 +2530,6 @@ packages:
   tinyrainbow@3.1.0:
     resolution: {integrity: sha512-Bf+ILmBgretUrdJxzXM0SgXLZ3XfiaUuOj/IKQHuTXip+05Xn+uyEYdVg0kYDipTBcLrCVyUzAPz7QmArb0mmw==}
     engines: {node: '>=14.0.0'}
-
-  tiptap-japanese@0.1.0:
-    resolution: {integrity: sha512-zu4Hj3BrZ9UHBg5x89bt/9RS2cm+543Ztby24ttKBAlkNkXJUPvVfDYC8mI5lGWrVpHieAaWw3VILOaNxyMYVw==}
-    peerDependencies:
-      '@tiptap/core': ^3.0.0
-      '@tiptap/pm': ^3.0.0
 
   tldts-core@7.0.27:
     resolution: {integrity: sha512-YQ7uPjgWUibIK6DW5lrKujGwUKhLevU4hcGbP5O6TcIUb+oTjJYJVWPS4nZsIHrEEEG6myk/oqAJUEQmpZrHsg==}
@@ -5361,11 +5352,6 @@ snapshots:
       picomatch: 4.0.4
 
   tinyrainbow@3.1.0: {}
-
-  tiptap-japanese@0.1.0(@tiptap/core@3.22.0(@tiptap/pm@3.22.0))(@tiptap/pm@3.22.0):
-    dependencies:
-      '@tiptap/core': 3.22.0(@tiptap/pm@3.22.0)
-      '@tiptap/pm': 3.22.0
 
   tldts-core@7.0.27: {}
 

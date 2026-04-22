@@ -1,3 +1,4 @@
+import { contentToHtml, htmlToContent } from "@shared/lib/tiptap-japanese";
 import Document from "@tiptap/extension-document";
 import Dropcursor from "@tiptap/extension-dropcursor";
 import Gapcursor from "@tiptap/extension-gapcursor";
@@ -8,7 +9,6 @@ import Text from "@tiptap/extension-text";
 import { DOMParser as ProseMirrorDOMParser } from "@tiptap/pm/model";
 import { type Editor, useEditor } from "@tiptap/react";
 import { useEffect, useMemo, useRef } from "react";
-import { contentToHtml, htmlToContent } from "tiptap-japanese";
 import { SaveShortcut, SnapshotShortcut } from "./extensions";
 import type { BaseEditorParams } from "./types";
 

@@ -1,5 +1,5 @@
-import type { ContentMarkup } from "tiptap-japanese";
-import { contentToHtml, htmlToContent } from "tiptap-japanese";
+import type { ContentMarkup } from "@shared/lib/tiptap-japanese";
+import { contentToHtml, htmlToContent } from "@shared/lib/tiptap-japanese";
 
 export type SceneData = {
 	id: string;
